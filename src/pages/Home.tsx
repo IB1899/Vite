@@ -7,12 +7,21 @@ const Home: FC = () => {
     let [email, setEmail] = useState<string>("");
     let [password, setPassword] = useState<string>("");
 
-
     //TODO onSubmit run this function
     let Post = async (e: FormEvent) => {
         e.preventDefault();
 
-        let response = await fetch("/https://social-media-app-backend-bv7l.onrender.com/log-in", {
+        console.log(email,password);
+
+        let playing = await fetch("https://restcountries.com/v3.1/all")
+        console.log(playing);
+        
+        let play = await playing.json()
+
+        console.log(play);
+        
+
+        let response = await fetch("https://social-media-app-backend-bv7l.onrender.com/log-in", {
             method: "Post", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
         })
@@ -26,7 +35,7 @@ const Home: FC = () => {
 
     return (
         <div className="Home">
-            <h1> The users data </h1>
+            <h1> The users data aaaaaaa</h1>
 
             <form onSubmit={Post}>
                 <label htmlFor="email">Email</label>
