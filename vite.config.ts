@@ -10,7 +10,6 @@ export default defineConfig({
       '/api': {
         target: 'https://social-media-app-backend-bv7l.onrender.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     }
   }
