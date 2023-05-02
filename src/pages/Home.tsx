@@ -12,7 +12,7 @@ const Home: FC = () => {
     let Post = async (e: FormEvent) => {
         e.preventDefault();
 
-        let response = await fetch("/api/log-in", {
+        let response = await fetch("/https://social-media-app-backend-bv7l.onrender.com/log-in", {
             method: "Post", headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
         })
