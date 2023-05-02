@@ -1,0 +1,413 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: lime;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+body .About .container {
+  background: red;
+  color: white;
+  padding: 10px;
+  transition: 1s;
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: fixed;
+  right: -310px;
+  scale: 0.3;
+}
+body .About .container .answer {
+  background: white;
+  color: black;
+  width: 300px;
+  text-align: left;
+  padding: 10px;
+  border-radius: 10px;
+  height: 300px;
+  overflow: auto;
+}
+body .About .container .answer .content {
+  margin: 10px 0;
+}
+body .About .container .answer .content #ask {
+  color: black;
+}
+body .About .container .answer .content #ans {
+  color: red;
+}
+body .About .container form {
+  margin: 15px 0;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+body .About .container form input {
+  outline: none;
+  color: black;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+}
+body .About .container form button {
+  background: black;
+  color: red;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+body .About .container form button:hover {
+  transition: 0.5s;
+  color: white;
+}
+body .About .container.open {
+  z-index: 10;
+  scale: 1;
+  position: absolute;
+  right: 50px;
+  transition: 1s;
+}
+body .About .container.open::after {
+  content: "";
+  height: 39px;
+  width: 8px;
+  background: red;
+  border: 20px;
+  position: absolute;
+  right: 18px;
+  bottom: -28px;
+  border-radius: 10px;
+}
+body .About .container.open ~ .Ai {
+  border: 4px solid red;
+  padding: 6px;
+  border-radius: 50%;
+  background: white;
+  transition: 1s;
+}
+body .About .Ai {
+  position: fixed;
+  bottom: 33px;
+  right: 42px;
+  transition: 1;
+}
+body .About .Ai img {
+  width: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+body .About .Ai:hover {
+  transition: 0.5s;
+}
+body .About .AiImage {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+body .About .AiImage .ImageGenerating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .About .AiImage .ImageGenerating label {
+  margin: 10px;
+  text-align: left;
+  align-self: stretch;
+}
+body .About .AiImage .ImageGenerating input {
+  margin-bottom: 20px;
+  outline: none;
+  color: black;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 300px;
+}
+body .About .AiImage .ImageGenerating select {
+  outline: none;
+  color: black;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+body .About .AiImage .ImageGenerating select option {
+  background: red;
+  font-weight: bold;
+  color: white;
+}
+body .About .AiImage .ImageGenerating button {
+  margin: 20px;
+  background: black;
+  color: lime;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.5s;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body .About .AiImage .ImageGenerating button:hover {
+  transition: 0.5s;
+  color: white;
+}
+body .About .AiImage img {
+  z-index: 1;
+  width: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 10px;
+  -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+body header {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  padding: 15px;
+}
+body header nav {
+  line-height: 30px;
+}
+body header nav a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+  color: black;
+}
+body header nav .active {
+  color: lime;
+}
+body .Home,
+body .About,
+body .Page,
+body .Page1,
+body .Page2 {
+  margin: 30px 0;
+}
+body .ImageUpload {
+  margin: 20px;
+}
+body .ImageUpload .images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px;
+}
+body .ImageUpload .images .img {
+  width: 400px;
+  cursor: pointer;
+  margin: 10px;
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+  align-items: center;
+}
+body .ImageUpload .images .img img {
+  width: auto;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .ImageUpload .images .img:hover h3 {
+  scale: 1.3;
+}
+body .OneImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .OneImage h3 {
+  margin: 30px;
+}
+body .OneImage img {
+  max-width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .OneImage .delete {
+  color: white;
+  background: red;
+  border: none;
+  padding: 7px 15px;
+  cursor: pointer;
+  margin: 20px;
+}
+body .OneImage form {
+  margin-top: 50px;
+  background: blue;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 3px lightsteelblue;
+}
+body .Home .users {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, auto);
+  row-gap: 50px;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
+  margin: 20px 0;
+}
+body .Home .users .user {
+  text-align: left;
+  background: black;
+  padding: 20px;
+  border-radius: 10px 0 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+body .Home .users .user span {
+  color: red;
+}
+body .Home .users .user h2,
+body .Home .users .user h3 {
+  color: white;
+}
+body .Home .users .user:hover {
+  transition: 0.5s;
+  scale: 1.2;
+}
+body .User {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .User .user {
+  text-align: center;
+  background: violet;
+  padding: 20px;
+  border-radius: 10px 0 10px 0;
+  transition: 0.5s;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body .User .user span {
+  color: red;
+}
+body .User .user h2,
+body .User .user h3 {
+  color: white;
+}
+body .User .operations {
+  display: flex;
+  width: 300px;
+  margin: 40px 0;
+  justify-content: space-evenly;
+}
+body .User .operations button:nth-child(1) {
+  background: red;
+}
+body .User .operations button:nth-child(3) {
+  background: blue;
+}
+body .User .operations button {
+  background: black;
+  padding: 6px 15px;
+  color: lime;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+body .User .none {
+  display: none;
+}
+body .Page {
+  display: grid;
+  justify-content: center;
+}
+body .Page nav {
+  margin: 10px 0;
+}
+body .Page nav a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+  color: white;
+}
+body .Page nav a:hover {
+  color: black;
+}
+body .Data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .Data .career {
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body .Data .career:hover {
+  transition: 0.4s;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+body .Contact {
+  display: flex;
+  justify-content: space-evenly;
+}
+body .Contact form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  align-items: center;
+}
+body .Contact form input,
+body .Contact form textarea {
+  width: 300px;
+  margin: 5px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  background: none;
+  border: 1.5px solid white;
+  padding: 10px;
+}
+body .Contact form input:focus,
+body .Contact form textarea:focus {
+  background: white;
+  color: lime;
+  outline: none;
+}
+body .Contact form button {
+  background: white;
+  padding: 6px 15px;
+  border: 1px solid white;
+  color: lime;
+  font-weight: bold;
+  cursor: pointer;
+}
+body .Contact .data {
+  margin: 10px;
+}
+body .Contact .data .piece {
+  margin: 20px 0;
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+}

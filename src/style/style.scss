@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: lime;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    .About {
+
+        .container {
+            background: red;
+            color: white;
+            padding: 10px;
+            transition: 1s;
+            border-radius: 10px;
+            width: fit-content;
+            position: fixed;
+            right: -310px;
+            scale: 0.3;
+
+            .answer {
+                background: white;
+                color: black;
+                width: 300px;
+                text-align: left;
+                padding: 10px;
+                border-radius: 10px;
+                height: 300px;
+                overflow: auto;
+
+                .content {
+                    margin: 10px 0;
+
+                    #ask {
+                        color: black;
+                    }
+
+                    #ans {
+                        color: red;
+                    }
+
+                }
+            }
+
+            form {
+                margin: 15px 0;
+                background: white;
+                border-radius: 10px;
+                display: flex;
+                justify-content: space-between;
+
+                input {
+                    outline: none;
+                    color: black;
+                    background: none;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    width: 100%;
+                }
+
+                button {
+                    background: black;
+                    color: red;
+                    border: none;
+                    padding: 12px 20px;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    transition: .5s;
+
+                    &:hover {
+                        transition: .5s;
+                        color: white;
+                    }
+                }
+
+            }
+        }
+
+        .container.open {
+            z-index:10;
+            scale: 1;
+            position: absolute;
+            right: 50px;
+            transition: 1s;
+
+            &::after {
+                content: '';
+                height: 39px;
+                width: 8px;
+                background: red;
+                border: 20px;
+                position: absolute;
+                right: 18px;
+                bottom: -28px;
+                border-radius: 10px;
+            }
+        }
+
+        .container.open~.Ai {
+            border: 4px solid red;
+            padding: 6px;
+            border-radius: 50%;
+            background: white;
+            transition: 1s;
+        }
+
+        .Ai {
+            position: fixed;
+            bottom: 33px;
+            right: 42px;
+            transition: 1;
+
+            img {
+                width: 40px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            &:hover {
+                transition: .5s;
+            }
+        }
+
+        .AiImage {
+            width:80%;
+            display:flex;
+            justify-content:space-evenly;
+
+            .ImageGenerating {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                label {
+                    margin: 10px;
+                    text-align: left;
+                    align-self: stretch;
+                }
+
+                input {
+                    margin-bottom: 20px;
+                    outline: none;
+                    color: black;
+                    background: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px 20px;
+                    width: 300px;
+                }
+
+                select {
+                    outline: none;
+                    color: black;
+                    background: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    width: 100%;
+                    cursor: pointer;
+
+                    option {
+                        background: red;
+                        font-weight: bold;
+                        color: white;
+                    }
+                }
+
+                button {
+                    margin: 20px;
+                    background: black;
+                    color: lime;
+                    border: none;
+                    padding: 12px 20px;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    font-weight: bold;
+                    transition: .5s;
+                    width: fit-content;
+
+                    &:hover {
+                        transition: .5s;
+                        color: white;
+                    }
+                }
+
+            }
+
+            img {
+                z-index:1;
+                width: 400px;
+                object-fit: cover;
+                margin: 10px;
+                -webkit-box-reflect:below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) , rgba(0,0,0,0.6));
+            }
+        }
+    }
+
+    header {
+        display: flex;
+        justify-content: space-around;
+        background: white;
+        padding: 15px;
+
+        nav {
+            line-height: 30px;
+
+            a {
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: bold;
+                margin: 10px;
+                color: black;
+            }
+
+            .active {
+                color: lime;
+            }
+        }
+    }
+
+    .Home,
+    .About,
+    .Page,
+    .Page1,
+    .Page2 {
+        margin: 30px 0;
+    }
+
+    .ImageUpload {
+        margin: 20px;
+
+        .images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px;
+
+            .img {
+                width: 400px;
+                cursor: pointer;
+                margin: 10px;
+                display: flex;
+                justify-content: left;
+                gap: 20px;
+                align-items: center;
+
+                img {
+                    width: auto;
+                    height: 100px;
+                    object-fit: cover;
+                }
+
+                &:hover {
+                    h3 {
+                        scale: 1.3;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .OneImage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            margin: 30px;
+        }
+
+        img {
+            max-width: 150px;
+            object-fit: cover;
+        }
+
+        .delete {
+            color: white;
+            background: red;
+            border: none;
+            padding: 7px 15px;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        form {
+            margin-top: 50px;
+            background: blue;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 3px lightsteelblue;
+        }
+    }
+
+    .Home {
+
+        .users {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(3, auto);
+            row-gap: 50px;
+            column-gap: 80px;
+            margin: 20px 0;
+
+            .user {
+                text-align: left;
+                background: black;
+                padding: 20px;
+                border-radius: 10px 0 10px 0;
+                cursor: pointer;
+                transition: .5s;
+
+                span {
+                    color: red;
+                }
+
+                h2,
+                h3 {
+                    color: white;
+                }
+
+                &:hover {
+                    transition: .5s;
+                    scale: 1.2;
+                }
+            }
+
+        }
+
+    }
+
+    .User {
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .user {
+            text-align: center;
+            background: violet;
+            padding: 20px;
+            border-radius: 10px 0 10px 0;
+            transition: .5s;
+            width: fit-content;
+
+            span {
+                color: red;
+            }
+
+            h2,
+            h3 {
+                color: white;
+            }
+        }
+
+        .operations {
+            display: flex;
+            width: 300px;
+            margin: 40px 0;
+            justify-content: space-evenly;
+
+            button:nth-child(1) {
+                background: red;
+            }
+
+            button:nth-child(3) {
+                background: blue;
+            }
+
+            button {
+                background: black;
+                padding: 6px 15px;
+                color: lime;
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+            }
+        }
+
+        .none {
+            display: none
+        }
+    }
+
+    .Page {
+        display: grid;
+        justify-content: center;
+
+        nav {
+            margin: 10px 0;
+
+            a {
+                text-decoration: none;
+                font-size: 20px;
+                font-weight: bold;
+                margin: 10px;
+                color: white;
+
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+    }
+
+    .Data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .career {
+            margin: 10px;
+            cursor: pointer;
+            transition: .5s;
+            width: fit-content;
+
+            &:hover {
+                transition: .4s;
+                background: white;
+                padding: 10px;
+                border-radius: 10px;
+            }
+
+        }
+    }
+
+    .Contact {
+        display: flex;
+        justify-content: space-evenly;
+
+        form {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            align-items: center;
+
+            input,
+            textarea {
+                width: 300px;
+                margin: 5px;
+                margin-bottom: 30px;
+                border-radius: 10px;
+                background: none;
+                border: 1.5px solid white;
+                padding: 10px;
+
+                &:focus {
+                    background: white;
+                    color: lime;
+                    outline: none;
+                }
+            }
+
+            button {
+                background: white;
+                padding: 6px 15px;
+                border: 1px solid white;
+                color: lime;
+                font-weight: bold;
+                cursor: pointer;
+
+            }
+        }
+
+        .data {
+            margin: 10px;
+
+            .piece {
+                margin: 20px 0;
+                background: black;
+                color: white;
+                padding: 10px;
+                border-radius: 10px;
+                width: 200px;
+            }
+
+        }
+
+    }
+
+}
