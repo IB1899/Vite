@@ -13,7 +13,6 @@ import Details, { FetchOne } from './pages/Detail'
 import Undefined from './pages/404'
 import ErrorPage from './pages/ErrorPage'
 import Contact, { publish } from './pages/Contact'
-import User, { fetchUser } from './pages/User'
 
 //*  Using lazy lading with react-router-dom 6.4+
 let ImageUpload = lazy(() => import('./pages/ImageUpload'))
@@ -33,7 +32,6 @@ let Router = createBrowserRouter(
       <Route path='' element={<Outlet />} errorElement={<ErrorPage />}>
 
         <Route index element={<Home />}  />
-        <Route path=':id' element={<User />} loader={fetchUser} />
 
       </Route>
       
